@@ -1,0 +1,199 @@
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <title>
+        Diya Minerals Navbar with Dropdown
+    </title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+
+        /* Dropdown animation */
+        .dropdown-menu {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            transform: scaleY(0.95);
+        }
+
+        .group-hover .dropdown-menu,
+        .group:hover .dropdown-menu {
+            opacity: 1 !important;
+            visibility: visible !important;
+            transform: scaleY(1);
+        }
+
+        /* Sticky navbar styles */
+        .navbar-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-scrolled {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .top-bar {
+            transition: all 0.3s ease;
+        }
+
+        .top-bar.hidden {
+            transform: translateY(-100%);
+            opacity: 0;
+            height: 0;
+            overflow: hidden;
+        }
+
+        /* Add padding to body to prevent content from going under fixed navbar */
+        body {
+            padding-top: 120px;
+        }
+
+        body.scrolled {
+            padding-top: 80px;
+        }
+
+        /* Ensure top-bar hides smoothly when scrolled */
+        .top-bar.hidden {
+            transform: translateY(-100%);
+            opacity: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar-container">
+        <div class="top-bar bg-[#2c333a] text-white text-xs sm:text-sm">
+            <div
+                class="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center px-2 sm:px-4 py-2 gap-2 sm:gap-0">
+                <div class="flex space-x-4 sm:space-x-6 mb-2 sm:mb-0">
+                    <a aria-label="Facebook" class="hover:text-yellow-500" href="#">
+                        <i class="fab fa-facebook-f">
+                        </i>
+                    </a>
+                    <a aria-label="Instagram" class="hover:text-yellow-500" href="#">
+                        <i class="fab fa-instagram">
+                        </i>
+                    </a>
+                    <a aria-label="WhatsApp" class="hover:text-yellow-500" href="#">
+                        <i class="fab fa-whatsapp">
+                        </i>
+                    </a>
+                    <a aria-label="LinkedIn" class="hover:text-yellow-500" href="#">
+                        <i class="fab fa-linkedin-in">
+                        </i>
+                    </a>
+                </div>
+                <div class="flex flex-col sm:flex-row space-y-1 sm:space-y-0 sm:space-x-6 font-semibold items-center">
+                    <div class="flex items-center space-x-1">
+                        <i class="fas fa-map-marker-alt text-yellow-500">
+                        </i>
+                        <span>
+                            SP-6, 4th Phase, RIICO Industrial Area, Makrana Road, Kishangarh
+                        </span>
+                    </div>
+                    <div class="flex items-center space-x-1">
+                        <i class="fas fa-phone-alt text-yellow-500">
+                        </i>
+                        <span>
+                            +91-8302401411
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <nav class="bg-white flex items-center justify-between px-8 py-4">
+            <div class="flex items-center space-x-4">
+                <img alt="Diya Minerals logo with gold and black colors" class="h-10 w-auto" height="40"
+                    src="/images/Logo/logo-2.png" width="120" />
+            </div>
+            <ul class="hidden md:flex space-x-8 text-black text-sm font-normal">
+                <li>
+                    <a href="index.html" class="cursor-pointer hover:underline block">HOME</a>
+                </li>
+                <li>
+                    <a href="about.html" class="cursor-pointer hover:underline block">ABOUT US</a>
+                </li>
+                <li class="relative group cursor-pointer">
+                    <div class="flex items-center space-x-1 hover:underline">
+                        <a href="#" class="block"><span>PRODUCT</span></a>
+                        <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </div>
+                    <ul
+                        class="dropdown-menu absolute left-0 mt-2 w-40 bg-white border border-gray-200 rounded-md shadow-lg opacity-0 group-hover:opacity-100 invisible group-hover:visible transition-all duration-300 z-10">
+                        <li>
+                            <a href="Indian marbal.html"
+                                class="px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm text-black transition-all duration-200 block">Indian
+                                Marble</a>
+                        </li>
+                        <li>
+                            <a href="indian Granite.html"
+                                class="px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm text-black transition-all duration-200 block">Indian
+                                Granite
+                            </a>
+                        </li>
+                        <li>
+                            <a href="Indian Exotic Granite.html"
+                                class="px-4 py-2 hover:bg-gray-100 cursor-pointer text-sm text-black transition-all duration-200 block">Indian
+                                Exotic Granite</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="process.html" class="cursor-pointer hover:underline block">PROCESS</a>
+                </li>
+                <li>
+                    <a href="contact.html" class="cursor-pointer hover:underline block">CONTACT US</a>
+                </li>
+            </ul>
+            <button
+                class="hidden md:block bg-[#c48a1f] text-black font-semibold text-sm px-6 py-3 hover:bg-[#b07e1a] transition-colors"
+                type="button">
+                GET BROCHURE
+            </button>
+        </nav>
+    </div>
+
+    <script>
+        window.addEventListener('scroll', function() {
+            const topBar = document.querySelector('.top-bar');
+            const navbarContainer = document.querySelector('.navbar-container');
+            const body = document.body;
+            
+            if (window.scrollY > 50) {
+                topBar.classList.add('hidden');
+                navbarContainer.classList.add('navbar-scrolled');
+                body.classList.add('scrolled');
+            } else {
+                topBar.classList.remove('hidden');
+                navbarContainer.classList.remove('navbar-scrolled');
+                body.classList.remove('scrolled');
+            }
+        });
+
+        // Also add scroll event for mobile menu functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,120 @@
+<!-- HERO SECTION START -->
+<section class="relative w-full h-[60vh] overflow-hidden">
+  <!-- Slider Wrapper -->
+  <div id="hero-slider" class="w-full h-full relative">
+    
+    <!-- Slides -->
+    <div class="slide absolute inset-0 opacity-100 transition-opacity duration-1000">
+      <img src="/images/heroimage/1.jpg" alt="Hero 1" class="w-full h-[60vh] object-cover">
+      <div class="absolute top-1/2 left-6 sm:left-16 transform -translate-y-1/2 z-10 text-left">
+        <h3 class="text-yellow-400 text-lg sm:text-2xl font-semibold mb-4 animate__animated animate__fadeInDown animate__delay-1s">
+          Welcome to Diya Minerals
+        </h3>
+        <h1 class="text-white text-3xl sm:text-5xl font-extrabold max-w-xl leading-tight animate__animated animate__fadeInUp animate__delay-2s">
+          Marble Let Your Beauty Shine
+        </h1>
+      </div>
+    </div>
+
+    <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000">
+      <img src="/images/heroimage/2.jpg" alt="Hero 2" class="w-full h-[60vh] object-cover">
+      <div class="absolute top-1/2 left-6 sm:left-16 transform -translate-y-1/2 z-10 text-left">
+        <h3 class="text-yellow-400 text-lg sm:text-2xl font-semibold mb-4 animate__animated animate__fadeInDown animate__delay-1s">
+          Welcome to Diya Minerals
+        </h3>
+        <h1 class="text-white text-3xl sm:text-5xl font-extrabold max-w-xl leading-tight animate__animated animate__fadeInUp animate__delay-2s">
+          Marble Let Your Beauty Shine
+        </h1>
+      </div>
+    </div>
+
+    <div class="slide absolute inset-0 opacity-0 transition-opacity duration-1000">
+      <img src="/images/heroimage/3.jpg" alt="Hero 3" class="w-full h-[60vh] object-cover">
+      <div class="absolute top-1/2 left-6 sm:left-16 transform -translate-y-1/2 z-10 text-left">
+        <h3 class="text-yellow-400 text-lg sm:text-2xl font-semibold mb-4 animate__animated animate__fadeInDown animate__delay-1s">
+          Welcome to Diya Minerals
+        </h3>
+        <h1 class="text-white text-3xl sm:text-5xl font-extrabold max-w-xl leading-tight animate__animated animate__fadeInUp animate__delay-2s">
+          Marble Let Your Beauty Shine
+        </h1>
+      </div>
+    </div>
+
+    <!-- Navigation Buttons -->
+    <button id="prevSlide"
+      class="absolute top-1/2 left-2 sm:left-6 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-3 z-20 transition duration-300">
+      &#10094;
+    </button>
+    <button id="nextSlide"
+      class="absolute top-1/2 right-2 sm:right-6 transform -translate-y-1/2 bg-black/50 hover:bg-black/70 text-white rounded-full p-3 z-20 transition duration-300">
+      &#10095;
+    </button>
+  </div>
+</section>
+
+<!-- Animate.css -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+
+<!-- SLIDER SCRIPT -->
+<script>
+  const slides = document.querySelectorAll('#hero-slider .slide');
+  let currentSlide = 0;
+
+  const showSlide = (index) => {
+    slides.forEach((slide, i) => {
+      const heading = slide.querySelector('h1');
+      const subHeading = slide.querySelector('h3');
+
+      if (i === index) {
+        slide.classList.remove('opacity-0');
+        slide.classList.add('opacity-100');
+
+        // Reset text animations
+        heading.classList.remove('animate__fadeInUp');
+        subHeading.classList.remove('animate__fadeInDown');
+
+        void heading.offsetWidth; // trigger reflow
+        void subHeading.offsetWidth;
+
+        heading.classList.add('animate__animated', 'animate__fadeInUp');
+        subHeading.classList.add('animate__animated', 'animate__fadeInDown');
+
+      } else {
+        slide.classList.remove('opacity-100');
+        slide.classList.add('opacity-0');
+      }
+    });
+  };
+
+  // Auto Slide
+  let slideInterval = setInterval(() => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+  }, 4000);
+
+  // Manual controls
+  document.getElementById('prevSlide').addEventListener('click', () => {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+    resetInterval();
+  });
+
+  document.getElementById('nextSlide').addEventListener('click', () => {
+    currentSlide = (currentSlide + 1) % slides.length;
+    showSlide(currentSlide);
+    resetInterval();
+  });
+
+  const resetInterval = () => {
+    clearInterval(slideInterval);
+    slideInterval = setInterval(() => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }, 4000);
+  };
+
+  // Show the first slide on load
+  showSlide(currentSlide);
+</script>
+<!-- SLIDER SCRIPT END -->
+<!-- All requirements are already met. No changes needed. -->

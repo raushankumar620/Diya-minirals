@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Legacy of Crafting</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+      body { font-family: 'Inter', sans-serif; }
+      /* Fade-in animation for cards */
+      .fade-in {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInUp 0.8s ease forwards;
+      }
+      .fade-in:nth-child(1) { animation-delay: 0.1s; }
+      .fade-in:nth-child(2) { animation-delay: 0.3s; }
+      .fade-in:nth-child(3) { animation-delay: 0.5s; }
+      .fade-in:nth-child(4) { animation-delay: 0.7s; }
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-[#f2f2f2] m-0 p-0">
+    <!-- Navbar Placeholder -->
+    <div id="navbar-placeholder"></div>
+    <script>
+        fetch('layout/navbar.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('navbar-placeholder').innerHTML = data;
+            })
+            .catch(error => console.error('Navbar load failed:', error));
+    </script>
+
+    <!-- Banner Section -->
+    <section>
+      <div class="relative w-full">
+        <img src="https://storage.googleapis.com/a1aa/image/7decc141-a23a-47f9-c36f-43b1f0bd1d7b.jpg"
+             alt="Office interior with chairs and table in a modern meeting room"
+             class="w-full h-[250px] object-cover" height="250" width="1920"/>
+        <h2 class="absolute inset-0 flex items-center justify-center text-white text-[32px] font-normal font-sans">
+          PROCESS
+        </h2>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="max-w-7xl mx-auto px-4 py-10">
+      <h3 class="text-center font-extrabold text-[18px] leading-[22px] text-[#1a1a1a] mb-1">
+        Our Process
+      </h3>
+      <h2 class="text-center font-extrabold text-[32px] leading-[38px] text-[#d9a53d] mb-8">
+        LEGACY OF CRAFTING
+      </h2>
+      <!-- Added process steps section below -->
+     
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+        <!-- Card 1 + Arrow -->
+        <div class="flex flex-row items-center fade-in">
+          <!-- Sourcing/Mining Card -->
+          <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col items-center transition-all duration-300 hover:scale-105 hover:shadow-xl hover:border-2 hover:border-[#d9a53d] border-transparent">
+            <img src="https://storage.googleapis.com/a1aa/image/aef0f1e2-a147-4544-55d9-aa1eef5c8a52.jpg"
+                 alt="Marble and granite block being cut by a large industrial machine with water spray"
+                 class="w-full h-[180px] object-cover rounded-t-xl" height="180" width="600"/>
+            <div class="p-6 text-center">
+              <span class="text-[32px] font-extrabold text-[#963333] mb-2 block">1</span>
+              <h3 class="font-extrabold text-[#d9a53d] text-lg mb-2">Sourcing / Mining</h3>
+              <p class="text-[#1a1a1a] text-base leading-6">
+                Extraction of Marble / Granite blocks along with the natural veins for a unique look.
+              </p>
+            </div>
+          </div>
+          <!-- Arrow (hidden on last card) -->
+          <div class="flex items-center h-full px-2">
+            <span class="text-[#9B2C2C] select-none text-3xl font-extrabold">≫</span>
+          </div>
+        </div>
+        <!-- Card 2 + Arrow -->
+        <div class="flex flex-row items-center fade-in">
+          <!-- Cutting Card -->
+          <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col items-center transition-all duration-300 hover:scale-105 hover:shadow-xl hover:border-2 hover:border-[#d9a53d] border-transparent">
+            <img src="https://storage.googleapis.com/a1aa/image/5c0617a6-ea99-4236-f061-875946633665.jpg"
+                 alt="Precision cutting machine spraying water on a large black granite slab"
+                 class="w-full h-[180px] object-cover rounded-t-xl" height="180" width="600"/>
+            <div class="p-6 text-center">
+              <span class="text-[32px] font-extrabold text-[#963333] mb-2 block">2</span>
+              <h3 class="font-extrabold text-[#d9a53d] text-lg mb-2">Cutting</h3>
+              <p class="text-[#1a1a1a] text-base leading-6">
+                Precision cutting using advanced machinery to create consistent slab sizes.
+              </p>
+            </div>
+          </div>
+          <div class="flex items-center h-full px-2">
+            <span class="text-[#9B2C2C] select-none text-3xl font-extrabold">≫</span>
+          </div>
+        </div>
+        <!-- Card 3 + Arrow -->
+        <div class="flex flex-row items-center fade-in">
+          <!-- Polishing Card -->
+          <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col items-center transition-all duration-300 hover:scale-105 hover:shadow-xl hover:border-2 hover:border-[#d9a53d] border-transparent">
+            <img src="https://storage.googleapis.com/a1aa/image/16363280-bb4d-479c-2477-68f7e1ca1b11.jpg"
+                 alt="Yellow polishing machine smoothing a slab in an industrial setting"
+                 class="w-full h-[180px] object-cover rounded-t-xl" height="180" width="600"/>
+            <div class="p-6 text-center">
+              <span class="text-[32px] font-extrabold text-[#963333] mb-2 block">3</span>
+              <h3 class="font-extrabold text-[#d9a53d] text-lg mb-2">Polishing</h3>
+              <p class="text-[#1a1a1a] text-base leading-6">
+                Polishing and texturing slabs for smooth surface and premium shine.
+              </p>
+            </div>
+          </div>
+          <div class="flex items-center h-full px-2">
+            <span class="text-[#9B2C2C] select-none text-3xl font-extrabold">≫</span>
+          </div>
+        </div>
+        <!-- Card 4 (no arrow after last card) -->
+        <div class="flex flex-row items-center fade-in">
+          <!-- Dispatch Card -->
+          <div class="bg-white rounded-xl shadow-md overflow-hidden flex flex-col items-center transition-all duration-300 hover:scale-105 hover:shadow-xl hover:border-2 hover:border-[#d9a53d] border-transparent">
+            <img src="https://storage.googleapis.com/a1aa/image/0c165962-acc7-4136-1156-bd4657101799.jpg"
+                 alt="Industrial packaging line with multiple machines in a warehouse"
+                 class="w-full h-[180px] object-cover rounded-t-xl" height="180" width="600"/>
+            <div class="p-6 text-center">
+              <span class="text-[32px] font-extrabold text-[#963333] mb-2 block">4</span>
+              <h3 class="font-extrabold text-[#d9a53d] text-lg mb-2">Dispatch</h3>
+              <p class="text-[#1a1a1a] text-base leading-6">
+                Secure packaging and delivery to prevent any damage during transport.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+    <!--================== Scripts for navbar, hero, footer ============================-->
+    <script>
+        fetch('layout/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(data, 'text/html');
+                // Get all child nodes except <script> to inject safely
+                const footerContent = Array.from(doc.body.childNodes).filter(node => node.tagName !== 'SCRIPT');
+                const footerTarget = document.getElementById('footer-placeholder');
+                footerContent.forEach(node => footerTarget.appendChild(node.cloneNode(true)));
+                // Re-insert scripts
+                doc.querySelectorAll("script").forEach(oldScript => {
+                    const newScript = document.createElement("script");
+                    if (oldScript.src) {
+                        newScript.src = oldScript.src;
+                    } else {
+                        newScript.textContent = oldScript.textContent;
+                    }
+                    document.body.appendChild(newScript);
+                });
+            })
+            .catch(error => {
+                console.error("Error loading footer:", error);
+            });
+    </script>
+  </body>
+</html>
